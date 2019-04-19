@@ -5,7 +5,8 @@ module.exports = {
     config.entry.main = './src/server/core/index.js';
     config.resolve.alias = {
       srv: path.join(__dirname, './src/server'),
-      cfg: path.join(__dirname, './config')
+      cfg: path.join(__dirname, './config'),
+      nuxtCfg: path.join(__dirname, './nuxt.config.js')
     };
     return config;
   }

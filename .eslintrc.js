@@ -12,12 +12,9 @@ module.exports = {
     'browser': true
   },
   extends: [
-    'airbnb-base',
-    // 'plugin:vue/recommended'
-  ],
-  plugins: [
-    // 'import',
-    // 'vue'
+    '@nuxtjs',
+    'plugin:nuxt/recommended',
+    'airbnb-base'
   ],
   settings: {
     'import/resolver': {
@@ -26,7 +23,8 @@ module.exports = {
           resolve: {
             alias: {
               srv: path.join(__dirname, './src/server'),
-              cfg: path.join(__dirname, './config')
+              cfg: path.join(__dirname, './config'),
+              nuxtCfg: path.join(__dirname, './nuxt.config.js')
             }
           }
         }
@@ -65,6 +63,7 @@ module.exports = {
       }
     ],
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'nuxt/no-cjs-in-config': 'off'
   }
 };

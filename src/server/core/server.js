@@ -9,7 +9,7 @@ import log4js from 'koa-log4';
 import {
   SERVER_SECRET,
   paths,
-  // nuxtBuild,
+  nuxtBuild,
   graphQl
 } from 'cfg';
 import { catchErr, statusMessage } from './error';
@@ -17,7 +17,7 @@ import { catchErr, statusMessage } from './error';
 import graphControl from './graphQl';
 import apiControl from './api';
 
-// import nuxtConfig from './nuxt';
+import nuxtConfig from './nuxt';
 
 export default (app) => {
   app.keys = SERVER_SECRET.split(',');
@@ -47,7 +47,7 @@ export default (app) => {
     apiControl(app);
   }
 
-  // if (nuxtBuild) {
-  //   nuxtConfig(app);
-  // }
+  if (nuxtBuild) {
+    nuxtConfig(app);
+  }
 };
