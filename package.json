@@ -1,0 +1,81 @@
+{
+  "name": "mootbox",
+  "version": "1.0.0",
+  "description": "Boilerplate for Nuxt, Graphql on top of Koa server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "backpack dev",
+    "prebuild": "rimraf build",
+    "build": "backpack build",
+    "start": "cross-env NODE_ENV=production node build/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smitray/mootbox.git"
+  },
+  "keywords": [
+    "Nuxt",
+    "GraphQL",
+    "postcss",
+    "Koa"
+  ],
+  "author": "Smit Ray <humancoder@outlook.com, hi@smitray.me, smit@codends.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smitray/mootbox/issues"
+  },
+  "homepage": "https://github.com/smitray/mootbox#readme",
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "@nuxtjs/apollo": "^4.0.0-rc4",
+    "@nuxtjs/axios": "^5.4.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.14",
+    "@okgrow/graphql-scalars": "^0.4.5",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link": "^1.2.11",
+    "apollo-link-context": "^1.0.17",
+    "apollo-link-http": "^1.5.14",
+    "apollo-server-koa": "^2.4.8",
+    "bcryptjs": "^2.4.3",
+    "cross-env": "^5.2.0",
+    "dotenv": "^7.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs-extra": "^7.0.1",
+    "graphql": "^14.2.1",
+    "graphql-tag": "^2.10.1",
+    "js-cookie": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-compose": "^4.1.0",
+    "koa-connect": "^2.0.1",
+    "koa-convert": "^1.2.0",
+    "koa-helmet": "^4.1.0",
+    "koa-log4": "^2.3.2",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.2",
+    "mongoose-timestamp": "^0.6.0",
+    "mongoose-unique-validator": "^2.0.3",
+    "nodemailer": "^6.1.0",
+    "nuxt": "^2.6.2",
+    "sharp": "^0.22.0",
+    "shortid": "^2.2.14",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "backpack-core": "^0.8.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.17.2",
+    "rimraf": "^2.6.3",
+    "shelljs": "^0.8.3"
+  }
+}
