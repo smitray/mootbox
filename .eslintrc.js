@@ -24,7 +24,9 @@ module.exports = {
             alias: {
               srv: path.join(__dirname, './src/server'),
               cfg: path.join(__dirname, './config'),
-              nuxtCfg: path.join(__dirname, './nuxt.config.js')
+              nuxtCfg: path.join(__dirname, './nuxt.config.js'),
+              '~': config.paths.app.client,
+              '@': config.paths.app.client
             }
           }
         }
