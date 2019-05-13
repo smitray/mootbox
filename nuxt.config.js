@@ -3,8 +3,6 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 const glob = require('glob-all');
 const OptimizeCssnanoPlugin = require('@intervolga/optimize-cssnano-plugin');
 
-// const tailwindJS = path.join(__dirname, 'tailwind.js');
-
 class TailwindExtractor {
   static extract(content) {
     // eslint-disable-next-line no-useless-escape
@@ -46,31 +44,35 @@ module.exports = {
         }
       }
     },
-    // postcss: {
-    //   tailwindcss: {
-    //     config: tailwindJS
-    //   },
-    //   'postcss-partial-import': {},
-    //   'postcss-crip': {},
-    //   'postcss-mixins': {},
-    //   'postcss-advanced-variables': {},
-    //   'postcss-short': {},
-    //   'postcss-preset-env': {
-    //     stage: 3,
-    //     features: {
-    //       'nesting-rules': false
-    //     }
-    //   },
-    //   'postcss-nested': {},
-    //   'postcss-ref': {},
-    //   'postcss-property-lookup': {},
-    //   'postcss-utilities': {},
-    //   'rucksack-css': {},
-    //   'postcss-extend': {},
-    //   'css-mqpacker': {},
-    //   'postcss-media-minmax': {},
-    //   'postcss-merge-rules': {}
-    // },
+    postcss: {
+      plugins: {
+        tailwindcss: path.resolve(__dirname, './tailwind.js'),
+        'postcss-partial-import': {},
+        'postcss-crip': {},
+        'postcss-mixins': {},
+        'postcss-advanced-variables': {},
+        'postcss-short': {},
+        'postcss-nested': {},
+        'postcss-ref': {},
+        'postcss-property-lookup': {},
+        'postcss-utilities': {},
+        'rucksack-css': {},
+        'postcss-extend': {},
+        'css-mqpacker': {},
+        'postcss-media-minmax': {},
+        'postcss-merge-rules': {}
+      },
+      preset: {
+        stage: 0,
+        autoprefixer: {
+          cascade: false,
+          grid: true
+        },
+        features: {
+          'nesting-rules': false
+        }
+      }
+    },
     extend(config, { isDev }) {
       config.node = {
         fs: 'empty'
@@ -98,7 +100,8 @@ module.exports = {
               preset: ['default', {
                 discardComments: {
                   removeAll: true
-                }
+                },
+                zIndex: false
               }]
             }
           })
@@ -110,11 +113,14 @@ module.exports = {
     '@nuxtjs/pwa'
     // '@nuxtjs/apollo'
   ],
-  manifest: {
+  meta: {
     name: 'Mootbox',
     description: 'SSR based boilerplate',
     theme_color: '#000'
   },
+  // workbox: {
+  //   dev: false
+  // },
   // apollo: {
   //   clientConfigs: {
   //     default: '@/graphql/config'

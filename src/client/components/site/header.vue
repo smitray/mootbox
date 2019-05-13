@@ -10,6 +10,7 @@
         <button
           class="flex items-center px-3 py-2 border rounded
           text-teal-light border-teal-light hover:border-white hover:text-white"
+          @click="toggle"
         >
           <svg
             class="fill-current h-3 w-3"
@@ -21,6 +22,33 @@
           </svg>
         </button>
       </div>
+      <div
+        class="w-full flex-grow sm:flex sm:items-center sm:w-auto"
+        :class="open ? 'block': 'hidden'"
+      >
+        <div class="text-sm flex-grow">
+          <a
+            href="#"
+            class="no-underline block mt-4 sm:inline-block
+            sm:mt-0 text-teal-lighter hover:text-white mr-4"
+          >
+            Docs
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    open: false
+  }),
+  methods: {
+    toggle() {
+      this.open = !this.open;
+    }
+  }
+};
+</script>
