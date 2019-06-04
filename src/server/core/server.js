@@ -9,8 +9,7 @@ import log4js from 'koa-log4';
 import {
   SERVER_SECRET,
   paths,
-  nuxtBuild,
-  graphQl
+  nuxtBuild
 } from 'cfg';
 import { catchErr, statusMessage } from './error';
 
@@ -34,18 +33,16 @@ export default (app) => {
     app.use(mount('/public', serve(paths.static)));
   }
 
-  if (graphQl) {
-    graphControl(app);
-  } else {
-    app.use(convert.compose(
-      bodyParser({
-        multipart: true,
-        formLimit: '200mb'
-      }),
-      helmet(),
-    ));
-    apiControl(app);
-  }
+  graphControl(app);
+
+  app.use(convert.compose(
+    bodyParser({
+      multipart: true,
+      formLimit: '200mb'
+    }),
+    helmet(),
+  ));
+  apiControl(app);
 
   if (nuxtBuild) {
     nuxtConfig(app);

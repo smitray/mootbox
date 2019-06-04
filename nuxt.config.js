@@ -46,7 +46,7 @@ module.exports = {
     },
     postcss: {
       plugins: {
-        tailwindcss: path.resolve(__dirname, './tailwind.js'),
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
         'postcss-partial-import': {},
         'postcss-crip': {},
         'postcss-mixins': {},

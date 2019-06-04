@@ -11,8 +11,7 @@ module.exports = {
         useCreateIndex: true
       }
     },
-    nuxtBuild: true,
-    graphQl: true
+    nuxtBuild: true
   },
   production: {
     port: 3000,
@@ -26,7 +25,6 @@ module.exports = {
         useCreateIndex: true
       }
     },
-    nuxtBuild: true,
-    graphQl: true
+    nuxtBuild: true
   }
 };

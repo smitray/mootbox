@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-teal py-6">
+  <nav class="bg-teal-300 py-6">
     <div class="container flex items-center justify-between flex-wrap">
       <div class="flex items-center flex-no-shrink text-white mr-6">
         <span class="font-semibold tracking-tight text-xl">
